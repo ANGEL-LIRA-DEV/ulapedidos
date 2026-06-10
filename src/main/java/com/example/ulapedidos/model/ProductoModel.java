@@ -13,7 +13,12 @@ import java.math.BigDecimal;
 public class ProductoModel {
 
     @Id
-    @SequenceGenerator(name = "seq_productos", sequenceName = "seq_productos", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_productos")
+    @SequenceGenerator(
+            name = "seq_productos",
+            sequenceName = "seq_productos",
+            allocationSize = 1
+    )
     @Column(name = "id_producto")
     private Integer idProducto;
 
